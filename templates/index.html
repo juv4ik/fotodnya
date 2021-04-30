@@ -11,11 +11,21 @@
     <div id="header">
         <h1>Фото дня</h1>
         <hr>
-        <div class="menu">
+        <div id="under_header">
+            <div class="menu">
             <a href ="/">{{ a }}</a><br>
             <a href="../news">News</a><br>
             <a class="admin" href="../admin" target="_blank">admin</a>
         </div>
+        <div class="user_login">
+            {% if user.is_authenticated %}
+                <p>{{ user.username }} <a href="{% url 'logout' %}">Выйти</a></p>
+            {% else %}
+                <p>Вы не залогинены. <a href="{% url 'login' %}">Вход</a></p>
+            {% endif %}
+        </div>
+        </div>
+
     </div>
     <div class="post_foto">
         {% for post in posts %}
