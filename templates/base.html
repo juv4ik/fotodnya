@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>fotoNews</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<div id="main">
+    <div id="header">
+        <a class="logo" href="/"><h1>Фото дня</h1></a>
+        <hr>
+        <div id="under_header">
+            <div class="menu">
+                <p><a href="/">Главная</a> | <a href="/">О нас</a></p>
+            </div>
+        <div class="user_login">
+            {% if user.is_authenticated %}
+                {% if user.is_staff %}
+            <p><b>&#128274; {{ user.username }}</b> <a href="{% url 'logout' %}">Выйти</a> | <a href="../admin">админка</a></p>
+                {% else %}
+                <p>&#128274; {{ user.username }} <a href="{% url 'logout' %}">Выйти</a></p>
+                {% endif %}
+            {% else %}
+                <p>Вы не залогинены. <a href="{% url 'login' %}">Вход</a> | <a href="{% url 'signup' %}">Регистрация</a></p>
+            {% endif %}
+        </div>
+        </div>
+
+    </div>
+    {% block content %}
+    {% endblock content %}
+    <div id="footer">
+        <p>&copy; 2021 <a href ="/">fotodnya</a></p>
+    </div>
+
+<!--
+    <p>добавить ПОСТ:</p>
+<form method="post">
+    {%csrf_token %}
+    {{post}}
+    <input type = "submit" value="send">
+</form>
+-->
+</div>
+</body>
+</html>
+
+
+
