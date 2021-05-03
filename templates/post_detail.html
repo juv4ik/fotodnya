@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="post_foto">
+    <h2>{{ object.title }}</h2>
+    <p>{{ object.author }}</p>
+    <img src="{{ object.img.url }}" width="750px">
+    <p><a href="/">{{ object.url_from }}</a></p>
+    <p>{{ object.timepostdate }}</p>
+    <p class="news-text">{{ object.description }}</p>
+    <hr class="news">
+</div>
+
+{% endblock content %}

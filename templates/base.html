@@ -18,7 +18,7 @@
         <div class="user_login">
             {% if user.is_authenticated %}
                 {% if user.is_staff %}
-            <p><b>&#128274; {{ user.username }}</b> <a href="{% url 'logout' %}">Выйти</a> | <a href="../admin">админка</a></p>
+            <p>&#128274; {{ user.username }} <a href="{% url 'logout' %}">Выйти</a> | <a href="../admin">админка</a></p>
                 {% else %}
                 <p>&#128274; {{ user.username }} <a href="{% url 'logout' %}">Выйти</a></p>
                 {% endif %}
