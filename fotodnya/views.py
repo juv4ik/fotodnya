@@ -11,6 +11,9 @@ class BlogDetailView(DetailView):
     model = fotoNews
     template_name = 'post_detail.html'
 
+def aboutPage(request):
+    return render(request, 'about.html')
+
 
 
 
