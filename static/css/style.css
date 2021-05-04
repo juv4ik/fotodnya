@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+    body {
+	font-family: Arial;
+}
+
+    #main {
+    margin: 0 auto;
+    width: 1050px;
+    min-height: 500px;
+    border: solid 1px #eee;
+    }
+
+    #header {
+    text-align: center;
+    }
+
+    #header h1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 48px;}
+
+    #header hr, hr {
+    padding: 0;
+	height: 1px;
+	border: none;
+	background: linear-gradient(45deg, #ddd, #333, #ddd);}
+
+    #footer{
+    text-align: center;
+    color: #ababab;
+    font-size: 13px;
+    }
+
+    #footer a{
+    color: #ababab;
+    text-decoration: none;
+    font-size: 13px;
+    }
+
+    h2, h2 a {
+    font-family: 'Rubik', sans-serif;
+    font-size: 32px;
+    text-decoration: none;
+    color: #000;
+    }
+    h2 a:hover {
+    color: #000;
+    text-decoration: underline;
+    }
+
+    a{font-size: 16px;
+    color: crimson;
+    text-decoration: underline;
+    }
+
+    a:hover{color: red;
+    text-decoration: none;}
+
+    a.admin{display:inline;
+    font-size: 10px;
+    color: #fff;
+    float: right}
+
+    a.api_link{
+    font-size: 12px;
+    color: blue;}
+
+    a.logo {
+    text-decoration: none;
+    color: #000;
+    }
+
+    #under_header {
+    background: linear-gradient(135deg, #fff, #eee 50%, #efefef);
+    border: solid 0px blue;
+    height:50px;
+    }
+
+    .menu{/*background-color: #efefef;*/
+    background: none;
+    width:60%;
+    float: left;
+    }
+    .menu p{
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+    }
+    .user_login {
+    background: none;
+    width:40%;
+    float: left;
+    font-size: 13px;
+    }
+    .user_login p {
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+    }
+    .user_login a {
+    font-size:13px;
+    color: #ccc;
+    }
+
+    .post_foto{padding: 5px;
+    text-align: center;
+    }
+
+    .post_foto img {
+    border: 1px solid #fafafa;
+    /*border-top-width: 35px;
+    border-bottom-width: 100px;*/
+    -webkit-box-shadow: 0px 0px 10px 2px #888;
+    -moz-box-shadow: 0px 0px 10px 2px #888;
+    box-shadow: 0px 0px 10px 2px #888;
+    }
+
+    p.news-text{color: #303030;
+    text-align: justify;
+    width: 80%;
+    margin: 0 auto;}
+
+    hr.news{margin: 20px 0;
+	padding: 0;
+	height: 6px;
+	border: none;
+	background: linear-gradient(45deg,#ddd, #333, #ddd);}
+
+	#form-center{
+	text-align: center;
+	background: linear-gradient(45deg, #290d8f, #f511e6);
+	color: white;
+	font-size: 20px;
+	}
+
+	.signup {
+	padding: 5px;
+    font-size: 13px;
+	}
+	.signup .helptext {
+	color: gray;
+	}
+
