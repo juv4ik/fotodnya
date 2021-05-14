@@ -141,3 +141,8 @@
 	color: gray;
 	}
 
+	.pagination, .pagination a {
+	font-size: 13px;
+	text-align: center;
+	color: #505050}
+

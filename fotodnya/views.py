@@ -3,6 +3,8 @@ from django.views.generic import DetailView
 from .models import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+
+
 def indexPage(request):
     object_list = list(reversed(fotoNews.objects.all()))
     paginator = Paginator(object_list, 8)  # 8 posts in each page
@@ -20,19 +22,9 @@ def indexPage(request):
                   {'page': page,
                    'posts': posts})
 
-# def indexPage(request):
-#    posts = reversed(fotoNews.objects.all())
-#    return render(request, 'index.html', {'posts': posts})
-
 class BlogDetailView(DetailView):
     model = fotoNews
     template_name = 'post_detail.html'
 
 def aboutPage(request):
     return render(request, 'about.html')
-
-
-
-
-
-
