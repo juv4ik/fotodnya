@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
+from django.views.generic.edit import FormMixin
+
 from .models import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .forms import CommentForm
 
 
 
@@ -22,8 +25,10 @@ def indexPage(request):
                   {'page': page,
                    'posts': posts})
 
+
 class BlogDetailView(DetailView):
     model = fotoNews
+    comments = comments_fn
     template_name = 'post_detail.html'
 
 

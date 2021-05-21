@@ -162,7 +162,7 @@
     right: 50px;
     width: 40px;
     height: 40px;
-    background-color: #DDD;
+    background-color: #efefef;
     color: #555;
     text-align: center;
     font-size: 30px;
@@ -170,6 +170,6 @@
     }
 
     #back2Top:hover {
-    background-color: #DDD;
+    background-color: #efefef;
     color: #000;
 }

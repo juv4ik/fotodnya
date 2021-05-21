@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\blog\urls.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\fotodnya\models.py">
           <value>
             <Attribute>
