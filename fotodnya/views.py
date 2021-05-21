@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import FormMixin
 
@@ -26,10 +27,13 @@ def indexPage(request):
                    'posts': posts})
 
 
-class BlogDetailView(DetailView):
+class BlogDetailView(DetailView, FormMixin):
     model = fotoNews
     #context_object_name = 'fotoNews'
     template_name = 'post_detail.html'
+    form_class = CommentForm
+    success_url = '.#comments'
+
 
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data(**kwargs)
@@ -37,6 +41,20 @@ class BlogDetailView(DetailView):
         context['CommentForm'] = CommentForm()
         # And so on for more models
         return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        CommentForm = self.get_form()
+        if CommentForm.is_valid():
+            return self.form_valid(CommentForm)
+        else:
+            return self.form_invalid(CommentForm)
+
+    def form_valid(self, CommentForm):
+        CommentForm.instance.post = self.object
+        CommentForm.instance.author = self.request.user
+        CommentForm.save()
+        return super().form_valid(CommentForm)
 
 
 def aboutPage(request):

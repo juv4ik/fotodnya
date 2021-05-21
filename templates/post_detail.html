@@ -13,7 +13,7 @@
     <p>{{ fotonews.timepostdate }}</p>
     <p class="news-text">{{ fotonews.description }}</p>
     <div id="comments">
-        <h3>Комментарии:</h3>
+        <a name="comments"></a><h3>Комментарии:</h3>
         <form method="post">
             {% csrf_token %}
             {{ form }}
