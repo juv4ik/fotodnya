@@ -9,5 +9,5 @@ class formPropose(forms.Form):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = comments_fn
-        fields = ('name', 'email', 'comment')
+        fields = ('comment', 'name')  #('name', 'email', 'comment')
 

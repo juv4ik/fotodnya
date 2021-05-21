@@ -7,14 +7,29 @@
 {% block content %}
 <div class="post_foto">
     <h2>{{ fotonews.title }}</h2>
-    <p>{{ fotonews.author }}</p>
+    <p>фото: {{ fotonews.author }}</p>
     <img src="{{ fotonews.img.url }}" width="750px">
-    <p><a href="/">{{ fotonews.url_from }}</a></p>
+    <p>источник: <a href="/">{{ fotonews.url_from }}</a></p>
     <p>{{ fotonews.timepostdate }}</p>
     <p class="news-text">{{ fotonews.description }}</p>
-    <hr>
-    <p>test:</p>
-    <p>{{ fotonews.comment }}</p>
+    <div id="comments">
+        <h3>Комментарии:</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type = "submit" value="send">
+        </form>
+        {% for i in comments %}
+            {% if i.fotoNews_id == fotonews.pk %}
+                {% if i.active == 1 %}
+                    <div class="comment">
+                        <p class="comment_by">{{ i.name }}, {{i.created }}:</p>
+                        <p class="comment_text">{{ i.comment }}</p>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
     <hr class="news">
 </div>
 

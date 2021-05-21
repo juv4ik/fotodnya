@@ -28,11 +28,17 @@ def indexPage(request):
 
 class BlogDetailView(DetailView):
     model = fotoNews
-    comments = comments_fn
+    #context_object_name = 'fotoNews'
     template_name = 'post_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogDetailView, self).get_context_data(**kwargs)
+        context['comments'] = comments_fn.objects.all()
+        context['CommentForm'] = CommentForm()
+        # And so on for more models
+        return context
 
 
 def aboutPage(request):
     return render(request, 'about.html')
-
 
