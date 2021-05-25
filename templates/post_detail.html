@@ -14,11 +14,27 @@
     <p class="news-text">{{ fotonews.description }}</p>
     <div id="comments">
         <a name="comments"></a><h3>Комментарии:</h3>
-        <form method="post">
+        {% if user.is_authenticated %}
+        <form method="post" id="comment_form">
             {% csrf_token %}
-            {{ form }}
-            <input type = "submit" value="send">
+<div class="fieldWrapper">
+    {{ form.comment.errors }}
+    <textarea id="id_comment" name="comment" cols="50" rows="10" placeholder="Ваше мнение, {{ user.username }}"></textarea>
+</div>
+<div class="fieldWrapper">
+    {{ form.name.errors }}
+    <textarea id="id_name" name="name" style="display: none;">{{ user.username }}</textarea>
+</div>
+<div class="fieldWrapper">
+    {{ form.fotoNews.errors }}
+    <textarea id="id_fotoNews" name="fotoNews" style="display: none;">{{ fotonews.pk }}</textarea>
+    <input type="submit" value="Отправить комментарий">
+</div>
+
         </form>
+        {% else %}
+        <p>чтобы оставлять комментарии, необходимо <a href="/accounts/login/">залогиниться</a></p>
+        {% endif %}
         {% for i in comments %}
             {% if i.fotoNews_id == fotonews.pk %}
                 {% if i.active == 1 %}

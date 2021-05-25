@@ -198,3 +198,9 @@
     color: #505050;
     font-size: 13px;
     }
+
+    #comment_form {
+    border: solid 0px red;
+    }
+
+

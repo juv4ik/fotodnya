@@ -29,11 +29,9 @@ def indexPage(request):
 
 class BlogDetailView(DetailView, FormMixin):
     model = fotoNews
-    #context_object_name = 'fotoNews'
     template_name = 'post_detail.html'
     form_class = CommentForm
     success_url = '.#comments'
-
 
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data(**kwargs)
