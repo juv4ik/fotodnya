@@ -19,7 +19,7 @@
             {% csrf_token %}
 <div class="fieldWrapper">
     {{ form.comment.errors }}
-    <textarea id="id_comment" name="comment" cols="50" rows="10" placeholder="Ваше мнение, {{ user.username }}"></textarea>
+    <textarea id="id_comment" name="comment" cols="50" rows="10" placeholder="Ваше мнение, {{ user.username }}" required></textarea>
 </div>
 <div class="fieldWrapper">
     {{ form.name.errors }}
@@ -28,7 +28,7 @@
 <div class="fieldWrapper">
     {{ form.fotoNews.errors }}
     <textarea id="id_fotoNews" name="fotoNews" style="display: none;">{{ fotonews.pk }}</textarea>
-    <input type="submit" value="Отправить комментарий">
+    <input type="submit" value="Оставить комментарий!">
 </div>
 
         </form>
