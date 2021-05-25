@@ -1,6 +1,11 @@
 from django.contrib import admin
 from .models import fotoNews, comments_fn
-admin.site.register(fotoNews)
+
+class fotoNewsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'timepostdate', 'active')
+    list_filter = ('active', 'timepostdate')
+    search_fields = ('title', 'author', 'description', 'url_from')
+admin.site.register(fotoNews, fotoNewsAdmin)
 
 
 class CommentAdmin(admin.ModelAdmin):
