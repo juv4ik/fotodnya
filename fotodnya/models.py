@@ -8,6 +8,7 @@ class fotoNews(models.Model):
     url_from = models.URLField(max_length=300, default='http://fotodnya.site', blank=True)
     timepostdate = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+    active = models.BooleanField(default=True)
 
     def __str__(self):
         return f'{self.title}'

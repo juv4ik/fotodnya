@@ -3,6 +3,7 @@
 {% block content %}
     <div class="post_foto">
         {% for post in posts %}
+            {% if post.active == 1 %}
         <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.author }}</p>
         <img src="{{ post.img.url }}" width="750px">
@@ -10,6 +11,7 @@
         <p>{{ post.timepostdate }}</p>
         <p class="news-text">{{ post.description }}</p>
         <hr class="news">
+        {% endif %}
         {% endfor %}
     </div>
     {% include "pagination.html" with page=posts %}
